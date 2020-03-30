@@ -2,7 +2,7 @@
 include '../aset/header.php';
 include 'koneksi.php';
 
-$sql = "SELECT * FROM buku";
+$sql = "SELECT * FROM anggota";
 
 $res = mysqli_query($koneksi, $sql);
 
@@ -25,9 +25,8 @@ while ($data = mysqli_fetch_assoc($res)) {
                 <thead>
                   <tr>
                     <th scope="col">No</th>
-                    <th scope="col">Judul </th>
-                    <th scope="col">Pengarang</th>
-                    <th scope="col">Stok</th>
+                    <th scope="col">Nama </th>
+                    <th scope="col">Kelas</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
@@ -37,9 +36,8 @@ while ($data = mysqli_fetch_assoc($res)) {
               foreach ($pinjam as $p ) { ?>
                 <tr>
                   <th scope="row"><?= $no ?></th>
-                  <td><?= $p['judul'] ?></th>
-                    <td><?= $p['pengarang'] ?></td>
-                    <td><?= $p['stok'] ?></td>
+                  <td><?= $p['nama'] ?></th>
+                    <td><?= $p['kelas'] ?></td>
                     <td>
                       <a href="#" class="badge badge-primary">Detail</a>
                       <a href="#" class="badge badge-success">Edit</a>
@@ -52,7 +50,7 @@ while ($data = mysqli_fetch_assoc($res)) {
                 ?>
               </tbody>
             </table>
-            <a href="http://localhost/siperpus/buku/tambah.php" class="btn btn-secondary">Tambah</a>
+            <a href="http://localhost/siperpus/anggota/tambah.php" class="btn btn-secondary">Tambah</a>
           </div>
         </div>
       </div>

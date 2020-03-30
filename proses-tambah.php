@@ -4,15 +4,14 @@ include 'koneksi.php';
 
 if(isset($_POST['simpan']))
 {
-  $judul = $_POST['judul'];
-  $penerbit = $_POST['penerbit'];
-  $pengarang = $_POST['pengarang'];
-  $ringkasan = $_POST['ringkasan'];
-  $cover = $_POST['cover'];
-  $stok = $_POST['stok'];
-  $id_kategori = $_POST['id_kategori'];
-  $sql = "INSERT INTO buku (judul, penerbit, pengarang, ringkasan, cover, stok, id_kategori)
-            VALUES ('$judul', '$penerbit', '$pengarang', '$ringkasan', '$cover', '$stok', $id_kategori)";
+  $nama = $_POST['nama'];
+  $kelas = $_POST['kelas'];
+  $telp = $_POST['telp'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $id_level = 3;
+  $sql = "INSERT INTO anggota (nama, kelas, telp, username, password, id_level)
+            VALUES ('$nama', '$kelas', '$telp', '$username', '$password', $id_level)";
 
 $res = mysqli_query($koneksi, $sql);
 
